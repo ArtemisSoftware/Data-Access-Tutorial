@@ -16,6 +16,23 @@ namespace DataAccess
         public MainPage()
         {
             InitializeComponent();
+
+            if (Application.Current.Properties.ContainsKey("Title"))
+            {
+                title.Text = Application.Current.Properties["Title"].ToString();
+            }
+
+            if (Application.Current.Properties.ContainsKey("NotificationsEnabled"))
+            {
+                notificationsEnabled.On = (bool) Application.Current.Properties["NotificationsEnabled"];
+            }
+        }
+
+
+        private void OnChange(object sender, System.EventArgs e)
+        {
+            Application.Current.Properties["Title"] = title.Text;
+            Application.Current.Properties["NotificationsEnabled"] = notificationsEnabled.On;
         }
     }
 }

@@ -6,11 +6,13 @@
              mc:Ignorable="d"
              x:Class="DataAccess.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection>
+                <EntryCell x:Name="title" Text="{Binding Title}" Label="Title" Placeholder="(eg Shopping)" Completed="OnChange" />
+                <SwitchCell x:Name="notificationsEnabled" Text="Notifications" On="{Binding NotificationsEnabled}" OnChanged="OnChange"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 
 </ContentPage>
