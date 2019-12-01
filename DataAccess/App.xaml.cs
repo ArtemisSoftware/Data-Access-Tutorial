@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Sql;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +16,7 @@ namespace DataAccess
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SqlMainPage();
         }
 
         protected override void OnStart()
