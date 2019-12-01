@@ -14,18 +14,23 @@ namespace DataAccess
     public partial class MainPage : ContentPage
     {
 
-        
-
         public MainPage()
         {
             InitializeComponent();
 
             BindingContext = Application.Current;
 
+            CheckFile();
+
         }
 
 
+        private async void CheckFile()
+        {
+             bool resultado = await PCLHelper.ArquivoExisteAsync("ficheiro");
 
-        
+            txt_arquivo.Text = "Existe arquivo: " + resultado + "";
+
+        }
     }
 }

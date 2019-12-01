@@ -11,6 +11,11 @@
             <TableSection>
                 <EntryCell Text="{Binding Title}" Label="Title" Placeholder="(eg Shopping)"  />
                 <SwitchCell Text="Notifications" On="{Binding NotificationsEnabled}" />
+                <TextCell x:Name="txt_arquivo" />
+                
+            </TableSection>
+            <TableSection>
+                
             </TableSection>
         </TableRoot>
     </TableView>
