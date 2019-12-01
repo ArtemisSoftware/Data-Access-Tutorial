@@ -6,6 +6,11 @@ namespace DataAccess
 {
     public partial class App : Application
     {
+
+        private const string TitleKey = "Title";
+        private const string NotificationsEnabledKey = "NotificationsEnabled";
+
+
         public App()
         {
             InitializeComponent();
@@ -27,5 +32,48 @@ namespace DataAccess
         {
             // Handle when your app resumes
         }
+
+
+        public string Title
+        {
+            get
+            {
+                if (Properties.ContainsKey(TitleKey))
+                {
+                    return Properties[TitleKey].ToString();
+                }
+                else
+                {
+                    return "";
+                }
+
+            }
+            set
+            {
+                Properties[TitleKey] = value;
+            }
+        }
+
+
+        public bool NotificationsEnabled
+        {
+            get
+            {
+                if (Properties.ContainsKey(NotificationsEnabledKey))
+                {
+                    return (bool) Properties[NotificationsEnabledKey];
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            set
+            {
+                Properties[NotificationsEnabledKey] = value;
+            }
+        }
+
     }
 }
