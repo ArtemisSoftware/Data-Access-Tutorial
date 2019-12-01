@@ -1,5 +1,7 @@
-﻿using DataAccess.Sql;
+﻿using DataAccess.Restful;
+using DataAccess.Sql;
 using System;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,11 +14,12 @@ namespace DataAccess
         private const string NotificationsEnabledKey = "NotificationsEnabled";
 
 
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new SqlMainPage();
+            MainPage = new RestfulMainPage();
         }
 
         protected override void OnStart()
